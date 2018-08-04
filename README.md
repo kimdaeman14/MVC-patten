@@ -247,29 +247,3 @@ var indexOfOneAndOnlyFaceUpCard: Int?
 
 일치하기 때문에 각각의 카드가 가지고 있는 isMatched에 대한 Bool 값을 true로 바꿔줍니다.
 
-일치하지 않은 경우에 대해서 사용자가 선택한 카드에 대한 isFaceUp은 true 값을 가지게 되고
-
-두장의 카드가 뒤집혀 있는 상태이니 indexOfOneAndOnlyFaceUpCard는 nil값을 가져야 합니다.
-
-일치하지 않는 경우 모든 카드를 다시 뒤집어야 하고 사용자가 선택한 값은 true로 만들고 indexOfOneAndOnlyFaceUpCard에 사용자가 선택한 index라는 매개변수로 indentifier 값을 할당해 줍니다.
-
-
-
-    func chooseCard(at index: Int) {
-        if !cards[index].isMatched {
-            if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
-                if cards[matchIndex].identifier == cards[index].identifier {
-                    cards[matchIndex].isMatched = true
-                    cards[index].isMatched = true
-                }
-                cards[index].isFaceUp = true
-                indexOfOneAndOnlyFaceUpCard = nil
-            } else {
-                for flipDownIndex in cards.indices {
-                    cards[flipDownIndex].isFaceUp = false
-                }
-                cards[index].isFaceUp = true
-                indexOfOneAndOnlyFaceUpCard = index
-            }
-        }
-    }
