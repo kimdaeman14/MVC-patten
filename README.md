@@ -235,15 +235,3 @@ emojiChoices의 갯수 -1 까지 생성되는 임의의 숫자의 인덱스에 �
         return emoji[card.identifier] ?? "?"
     }
 
-
-Concentration Model 로직 구성하기
-
-뒤집혀진 카드의 숫자를 Tracking 하는 변수를 하나 설정하겠습니다. 어떤 카드도 뒤집혀 있지 않은 상태(== nil)가 있을 수 있기 때문에 옵셔널로 타입을 정합니다.
-
-var indexOfOneAndOnlyFaceUpCard: Int?
-첫번째 분기에서, matchIndex에 뒤집혀진 카드의 index 값을 넣고, 뒤집힌 카드가 동일한 카드임을 방지하기 위해 matchIndex != index를 선언합니다. 만약 두개의 조건이 사실이라면,
-
-실제 두개의 카드가 일치하는지 확인하게 됩니다.
-
-일치하기 때문에 각각의 카드가 가지고 있는 isMatched에 대한 Bool 값을 true로 바꿔줍니다.
-
