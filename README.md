@@ -56,7 +56,7 @@ View는 Controller에게 구조적으로 미리 정해진 방식으로 Controlle
 MVC 구현하기
 
 
-[](https://user-images.githubusercontent.com/34432988/43676823-329d54a8-9833-11e8-9374-ea4a471e61d5.png)
+(https://user-images.githubusercontent.com/34432988/43676823-329d54a8-9833-11e8-9374-ea4a471e61d5.png)
  
 
 1. Concentration model 만들기
