@@ -112,32 +112,6 @@ var cards = [Card]()
 
 
 
-1. 초기화
-
-class는 모든 프로퍼티가 초기화 되면 인수가 없는 init을 자동으로 가지게 됩니다.
-
-struct는 모든 프로퍼티를 초기화 할 수 있는 init을 자동으로 가지게 됩니다.
-
-Init 함수는 통상적으로 인자의 내, 외부명이 동일하게 사용합니다.
-
-//Struct
-
-    init(identifier: Int) {
-        self.identifier = identifier
-    }
-
-//Class
-
-    init(numberOfPairsOfCards: Int) {
-        for identifier in 0..<numberOfPairsOfCards {
-            let card = Card(identifier: identifier)
-            cards += [card, card]
-        }
-카드의 identifier를 Concentration 클레스에서 정하는 것이 맞을까요?
-
-Card 구조체에서 정하는 것이 더욱 적절할 것으로 보입니다.
-
-
 
 
 
