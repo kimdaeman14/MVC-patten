@@ -159,33 +159,5 @@ static var identifierFactory = 0
     }
 
 
-카드 뒤집기
-
-
-
-1.  Concentration 사용하기
-
-프로퍼티 이니셜라이져 안에서 인스턴스 멤버인 cardButtons 사용할 수 없습니다. Concentration도 초기화 중이고, cardButtons도 초기화 중이기 때문입니다.
-
-서로가 불완전한 상태에서 상호 의존적인 관계에 있습니다. 이를 해결하기 위해서 lazy를 이용해서
-
-game이 사용될때 초기화를 해주도록 합시다.
-
-lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
-2. updateViewFromModel 메소드 만들기
-
-특정 인덱스의 카드가 선택되었음을 확인시켜 주고, 카드가 매칭 되었을 때는 투명한 색으로 설정하고 그렇지 않은 경우에는 카드를 다시 뒤집는 코드 입니다.
-
-    func updateViewFromModel() {
-        for index in cardButtons.indices {
-            let button = cardButtons[index]
-            let card = game.cards[index]
-            if card.isFaceUp {
-                button.setTitle(emoji(for: card), for: UIControlState.normal)
-                button.backgroundColor =  colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            } else {
-                button.setTitle("", for: UIControlState.normal)
-                button.backgroundColor = card.isMatched ?  colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0) :  colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
-            }
 
 
