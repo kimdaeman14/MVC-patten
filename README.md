@@ -139,24 +139,7 @@ Card 구조체에서 정하는 것이 더욱 적절할 것으로 보입니다.
 
 
 
-Static
 
-Static은 타입에 여러분이 원하는 프로퍼티나 메소드를 연결할 수 있습니다.
-
-인스턴스를 만들 필요 없이 타입에 dot operator를 사용해서 프로퍼티와 메소드에
-
-접근할 수 있습니다.
-
-static var identifierFactory = 0
-    
-    static func getUniqueIdentifier() -> Int {
-        identifierFactory += 1
-        return identifierFactory
-    }
-    
-    init() {
-        self.identifier = Card.getUniqueIdentifier()
-    }
 
 
 
