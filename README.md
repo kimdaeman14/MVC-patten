@@ -94,22 +94,6 @@ class Concentration {
 
 이를 ‘쓰기 시 복사’ 전달 체계라고 합니다.
 
-Card라는 모델에 들어가야할 필수적인 프로퍼티들을 아래와 같이 정합니다.
-
-Concentration에서 초기화로 인한 에러가 계속 발생하는 것을 확인할 수 있습니다.
-
-struct Card {
-    var isFaceUp = false
-    var isMatched = false
-    var identifier: Int
-}
-아래와 같이 빈 배열로 초기화 해줍니다.
-
-var cards = [Card]()
-
-
-카드 초기화 하기
-
 
 
 
