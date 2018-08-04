@@ -212,26 +212,3 @@ func chooseCard(at index: Int) {
 이모티콘 나오게 하기
 
 
-
-딕셔너리
-
-딕셔너리는 key, value의 쌍으로 이루어져 있는 데이터 구조 입니다.
-
-인자의 명을 정할 때는 글을 읽듯이 읽히는 것이 좋습니다.
-
-카드 인자에 대해 emoji라는 함수가 호출되면 String 타입을 반환하게 됩니다.
-
-만약 유일한 구분자를 가지고 있는 카드에 매칭되는 이모지가 존재하지 않고, 아직 emojiChoices에 이모지가 남아 있다면,
-
-emojiChoices의 갯수 -1 까지 생성되는 임의의 숫자의 인덱스에 해당하는 emojiChoices내의 이모지를 지우면서 emoji 딕셔너리에 할당합니다.
-
-그렇지 않은 경우에는 ?를 반환합니다.
-
-    func emoji(for card: Card) -> String {
-        if emoji[card.identifier] == nil, emojiChoices.count > 0 {
-            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
-            emoji[card.identifier] = emojiChoices.remove(at: randomIndex)
-        }
-        return emoji[card.identifier] ?? "?"
-    }
-
