@@ -187,28 +187,5 @@ lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
                 button.setTitle("", for: UIControlState.normal)
                 button.backgroundColor = card.isMatched ?  colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0) :  colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
             }
-        }
-    }
-3. 이모티콘 넣기
-
-이모티콘의 목록에서 우리가 원하는 이모티콘을 선택해서 보여주는 역할을 합니다. 컨트롤러는 UI로직이 어떻게 될 것인지에 대해 신경을 씁니다.
-
-    var emojiChoices = ["🦇", "😱", "🙀", "👿", "🎃", "👻", "🍭", "🍬", "🍎"]
-    
-    func emoji(for card: Card) -> String {
-        return "?"
-    }
-4. Concentration 모델에서 카드 뒤집기 코드 완성하기
-
-func chooseCard(at index: Int) {
-        if cards[index].isFaceUp {
-            cards[index].isFaceUp = false
-        } else {
-            cards[index].isFaceUp = true
-        }
-}
-
-
-이모티콘 나오게 하기
 
 
